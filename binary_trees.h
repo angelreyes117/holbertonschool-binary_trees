@@ -64,6 +64,8 @@ avl_t *sorted_array_to_avl(int *array, size_t size);
 int binary_tree_is_heap(const binary_tree_t *tree);
 size_t count_nodes(const binary_tree_t *tree);
 int is_complete(const binary_tree_t *tree, size_t index, size_t node_count);
+binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
+heap_t *heap_insert(heap_t **root, int value);
 void binary_tree_print(const binary_tree_t *tree);
 
 #endif /* BINARY_TREES_H */
