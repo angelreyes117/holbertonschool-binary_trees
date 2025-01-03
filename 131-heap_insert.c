@@ -35,7 +35,7 @@ void bubble_up(heap_t *node)
  *
  * Return: Pointer to the parent node for insertion
  */
-heap_t *find_insert_position(heap_t *root, heap_t **queue, size_t size)
+heap_t *find_insert_position(heap_t *root, heap_t **queue)
 {
 	size_t front = 0, back = 0;
 
