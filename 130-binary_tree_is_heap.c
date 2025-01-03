@@ -11,14 +11,14 @@
  */
 int is_complete(const binary_tree_t *tree, size_t index, size_t node_count)
 {
-    if (!tree)
-        return (1);
+	if (!tree)
+		return (1);
 
-    if (index >= node_count)
-        return (0);
+	if (index >= node_count)
+		return (0);
 
-    return (is_complete(tree->left, 2 * index + 1, node_count) &&
-            is_complete(tree->right, 2 * index + 2, node_count));
+	return (is_complete(tree->left, 2 * index + 1, node_count) &&
+		is_complete(tree->right, 2 * index + 2, node_count));
 }
 
 /**
@@ -29,10 +29,10 @@ int is_complete(const binary_tree_t *tree, size_t index, size_t node_count)
  */
 size_t count_nodes(const binary_tree_t *tree)
 {
-    if (!tree)
-        return (0);
+	if (!tree)
+		return (0);
 
-    return (1 + count_nodes(tree->left) + count_nodes(tree->right));
+	return (1 + count_nodes(tree->left) + count_nodes(tree->right));
 }
 
 /**
@@ -43,16 +43,16 @@ size_t count_nodes(const binary_tree_t *tree)
  */
 int is_max_heap(const binary_tree_t *tree)
 {
-    if (!tree)
-        return (1);
+	if (!tree)
+		return (1);
 
-    if (tree->left && tree->left->n > tree->n)
-        return (0);
+	if (tree->left && tree->left->n > tree->n)
+		return (0);
 
-    if (tree->right && tree->right->n > tree->n)
-        return (0);
+	if (tree->right && tree->right->n > tree->n)
+		return (0);
 
-    return (is_max_heap(tree->left) && is_max_heap(tree->right));
+	return (is_max_heap(tree->left) && is_max_heap(tree->right));
 }
 
 /**
@@ -63,15 +63,15 @@ int is_max_heap(const binary_tree_t *tree)
  */
 int binary_tree_is_heap(const binary_tree_t *tree)
 {
-    size_t node_count;
+	size_t node_count;
 
-    if (!tree)
-        return (0);
+	if (!tree)
+		return (0);
 
-    node_count = count_nodes(tree);
+	node_count = count_nodes(tree);
 
-    if (!is_complete(tree, 0, node_count))
-        return (0);
+	if (!is_complete(tree, 0, node_count))
+		return (0);
 
-    return (is_max_heap(tree));
+	return (is_max_heap(tree));
 }
