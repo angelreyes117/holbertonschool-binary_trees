@@ -76,7 +76,7 @@ heap_t *heap_insert(heap_t **root, int value)
 		return (*root);
 	}
 
-	parent = find_insert_position(*root, queue, 1024);
+	parent = find_insert_position(*root, queue);
 
 	if (!parent)
 		return (NULL);
